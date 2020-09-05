@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <title>emoji</title>
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href="/"><h1>emoji</h1></a>
+            <div class="toggleMenu" onclick="controlToggle();"></div>
+            <ul class="navi">
+                <li><a href="">happy</a></li>
+                <li><a href="">sad</a></li>
+                <li><a href="">angry</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>emoji with<br><span>color</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate hic ea aut debitis suscipit tempora expedita magni totam eum nobis ipsum, quos, officia ex magnam recusandae in dolor culpa repudiandae?</p>
+            </div>
+            <div class="imgBox">
+                <img src="img/emoji/happy.png" class="emoji" />
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="./img/emoji/happy.png" onclick="changeEmoji('./img/emoji/happy.png');changeBG('#ffb31a')" /></li>
+            <li><img src="./img/emoji/sad.png" onclick="changeEmoji('./img/emoji/sad.png');changeBG('#6d7bb8')" /></li>
+            <li><img src="./img/emoji/angry.png" onclick="changeEmoji('./img/emoji/angry.png');changeBG('#ff5656')" /></li>
+        </ul>
+        <ul class="socialMedia">
+            <li><a href="#"><img src="./img/socialMedia/facebook.png"/></a></li>
+            <li><a href="#"><img src="./img/socialMedia/instagram.png"/></a></li>
+            <li><a href="#"><img src="./img/socialMedia/twitter.png"/></a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+      const changeEmoji = (imgPath) => {
+          document.querySelector('.emoji').src = imgPath;
+      }
+
+      const changeBG = (color) => {
+          const sec = document.querySelector('.sec');
+          sec.style.background = color;
+
+      }
+
+      const controlToggle = () => {
+          const toggleMenu = document.querySelector('.toggleMenu');
+          const navi = document.querySelector('.navi');
+          toggleMenu.classList.toggle('active');
+          navi.classList.toggle('active');
+      }
+
+    </script>
+</body>
+</html>
